@@ -88,15 +88,22 @@ public class ai {
 	input = buf.readLine();
 	for(int m=0;m<3;m++)
 	{
-		if(input == res[m])
+		if(input.equals(res[m]))/* == doesn't compare strings as it calls the equals()
+									function of the Object class, which compares memory indices.
+									Thus, equals() of the String class needs to be called for comparison of Strings*/
 		{
 			size1 = size1 + size[m]; 	
+			System.out.println("Size 1:"+size1);
 		}
 	}
 	String arr1[]=new String[size1];
+	s=0; //This needed reinitializing, otherwise, an ArrayIndexOutOfBounds would have been thrown in the
+		 //code section below
 	for(int n=0;n<3;n++)
 	{
-		if(input == res[n])
+		if(input.equals(res[n]))/* == doesn't compare strings as it calls the equals()
+									function of the Object class, which compares memory indices.
+									Thus, equals() of the String class needs to be called for comparison of Strings*/
 		{
 			for(int q=0;q<size[n];q++)
 			{
